@@ -1,10 +1,7 @@
-﻿using System;
-namespace DotNet_RSA.Interfaces
+﻿namespace DotNet_RSA.Interfaces
 {
-    public class IRSAHelper
+    public interface IRSAHelper
     {
-        public IRSAHelper()
-        {
-        }
+        string Decrypt(string value);
     }
 }

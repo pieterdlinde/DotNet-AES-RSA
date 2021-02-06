@@ -25,7 +25,17 @@ namespace DotNet_RSA
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options =>
+            {
+                string[] methods = { "GET", "POST", "PUT", "DELETE" };
+                options.AddPolicy("AllowFrontend",
+                    builder => builder.WithOrigins("http://localhost:4200").AllowAnyHeader().WithMethods(methods).AllowCredentials());
+
+            });
+
             services.AddControllers();
+
+            services.AddScoped<Interfaces.IRSAHelper, Helpers.RSAHelper>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -35,6 +45,8 @@ namespace DotNet_RSA
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseCors("AllowFrontend");
 
             app.UseHttpsRedirection();
 
