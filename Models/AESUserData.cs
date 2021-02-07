@@ -1,10 +1,8 @@
-﻿using System;
-namespace DotNet_RSA.Models
+﻿namespace DotNet_RSA.Models
 {
     public class AESUserData
     {
-        public AESUserData()
-        {
-        }
+        public string Data { get; set; }
+        public string AESKey { get; set; }
     }
 }

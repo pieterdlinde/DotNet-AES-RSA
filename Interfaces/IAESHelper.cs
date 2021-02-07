@@ -1,10 +1,8 @@
 ﻿using System;
 namespace DotNet_RSA.Interfaces
 {
-    public class IAESHelper
+    public interface IAESHelper
     {
-        public IAESHelper()
-        {
-        }
+        string Decrypt(string value, string aesKey);
     }
 }

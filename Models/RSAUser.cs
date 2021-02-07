@@ -1,7 +1,6 @@
-﻿using System;
-namespace DotNet_RSA.Models
+﻿namespace DotNet_RSA.Models
 {
-    public class User
+    public class RSAUser
     {
         public string UserName { get; set; }
         public string Password { get; set; }

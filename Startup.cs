@@ -36,6 +36,7 @@ namespace DotNet_RSA
             services.AddControllers();
 
             services.AddScoped<Interfaces.IRSAHelper, Helpers.RSAHelper>();
+            services.AddScoped<Interfaces.IAESHelper, Helpers.AESHelper>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
